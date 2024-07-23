@@ -11,7 +11,7 @@ concurrency:
 jobs:
   go-lint:
     name: Go Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -31,13 +31,13 @@ jobs:
       matrix:
         include:
           - os: linux
-            run: ubuntu-latest
+            run: ubuntu-22.04
           # MacOS is disabled due to the high cost multiplier on GH Actions.
           #- os: darwin
-          #  run: macos-latest
+          #  run: macos-12
           # Windows not allowed currently because of line-ending conversion issues.
           #- os: windows
-          #  run: windows-latest
+          #  run: windows-2022
     steps:
       - name: Check out code
         uses: actions/checkout@v3

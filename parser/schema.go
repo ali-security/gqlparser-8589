@@ -8,7 +8,8 @@ import (
 
 func ParseSchema(source *Source) (*SchemaDocument, error) {
 	p := parser{
-		lexer: lexer.New(source),
+		lexer:         lexer.New(source),
+		maxTokenLimit: 15000, // default value
 	}
 	ast, err := p.parseSchemaDocument(), p.err
 	if err != nil {
